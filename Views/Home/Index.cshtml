@@ -1,7 +1,35 @@
 ﻿
 @{
     ViewData["Title"] = "Index";
+    var dateAndTIme = DateTime.Now; 
+    var year = DateTime.Now.Year; 
 }
 
 <h1>Index</h1>
+<h2>Current Date And Time is @dateAndTIme</h2>
+<h2>Current Year is @year</h2>
+
+@{
+    string myName = "Sarmad";
+    if (myName.Equals("Sarmad"))
+    {
+        <h2>Welcom Sarmad</h2>
+    }
+    else
+    {
+        <h2>Bye</h2>
+    }
+
+    for (int i = 0; i < 10; i++)
+    {
+        <h2>@i</h2>
+    }
+
+    string[] names = {"Sarmad", "Uzair", "Ali", "Jalbani"};
+
+    foreach (var item in names)
+    {
+        <h3>Student Name: @item</h3>
+    }
+}
 

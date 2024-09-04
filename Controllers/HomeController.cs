@@ -34,7 +34,7 @@ namespace ControllersAndActionsASP.Controllers
         {
             var name = "Sarmad";
             var department = "Computer Science";
-            return Json(new {name=name,department}); //for JSON result
+            return Json(new {name,department}); //for JSON result
         }
     }
 }
