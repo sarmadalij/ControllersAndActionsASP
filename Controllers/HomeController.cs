@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ControllersAndActionsASP.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ControllersAndActionsASP.Controllers
 {
@@ -7,6 +8,17 @@ namespace ControllersAndActionsASP.Controllers
     {
         public IActionResult Index()
         {
+            //model data
+            var persons = new List<PersonModel> { 
+                new PersonModel { personName = "Sarmad", personAge = 24, personProfession = "Programmer"},
+                new PersonModel { personName = "Jalbani", personAge = 16, personProfession = "Student" },
+                new PersonModel { personName = "Ali", personAge = 5, personProfession = "Child"}
+            };
+
+            //passing data Via ViewData
+            ViewData["persons"] = persons;
+
+
             //preparing data in ViewData to pass to View
             ViewData["name"] = "Sarmad";
             ViewData["dept"] = "Computer Science";

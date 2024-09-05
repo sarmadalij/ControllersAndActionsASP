@@ -23,10 +23,28 @@
     // {
     //     tempData = (string)TempData["tempdata"];
     // }
-   
+
+    //model data stored here from controller
+    var personsData = ViewData["persons"] as List<ControllersAndActionsASP.Models.PersonModel>;
 
 }
 
+@* display person data in table *@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Profession</th>
+    </tr>
+    @foreach (var item in personsData)
+    {
+        <tr>
+            <td>@item.personName</td>
+            <td>@item.personAge</td>
+            <td>@item.personProfession</td>
+        </tr>
+    }
+</table>
 <h1>Index - This is My HomePage @name</h1>
 
 
