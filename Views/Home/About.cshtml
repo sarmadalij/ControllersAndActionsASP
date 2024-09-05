@@ -2,7 +2,25 @@
 @{
     ViewData["Title"] = "About";
     // Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //storing data coming from controller via ViewBag
+    string name = ViewBag.name;
+    string dept = ViewBag.dept;
+    int age = ViewBag.age;
 }
 
 <h1>This is my About</h1>
+<h3>@name</h3>
+<h3>@dept</h3>
+<h3>@age</h3>
+
+@{
+    List<string> list = ViewBag.nameList;
+
+    foreach (var item in list)
+    {
+        <h4>@item</h4>
+    }
+}
+
 

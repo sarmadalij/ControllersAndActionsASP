@@ -7,7 +7,7 @@ namespace ControllersAndActionsASP.Controllers
     {
         public IActionResult Index()
         {
-            //preparing data to pass to View
+            //preparing data in ViewData to pass to View
             ViewData["name"] = "Sarmad";
             ViewData["dept"] = "Computer Science";
             ViewData["sem"] = "Seven";
@@ -21,6 +21,11 @@ namespace ControllersAndActionsASP.Controllers
 
         public IActionResult About()
         {
+            //preparing data in ViewBag to pass to View
+            ViewBag.name = "Sarmad";
+            ViewBag.dept = "Computer Science";
+            ViewBag.age = 24;
+            ViewBag.nameList = new List<string> { "Sarmad", "Ali", "Jalbani"};
             return View(); // ViewResult, PArtialViewResult, JsonResult, etc has implemented the IActionResult
         }
 

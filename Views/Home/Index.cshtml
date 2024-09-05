@@ -13,9 +13,12 @@
     // var dateAndTIme = DateTime.Now; 
     // var year = DateTime.Now.Year; 
 
+    //storing data coming from controller
+    string name = (string) ViewData["name"];
+
 }
 
-<h1>Index - This is My HomePage</h1>
+<h1>Index - This is My HomePage @name</h1>
 
 
     @* accessing data coming from the controller action *@
