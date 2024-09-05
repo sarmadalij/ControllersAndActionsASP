@@ -16,6 +16,15 @@
     //storing data coming from controller
     string name = (string) ViewData["name"];
 
+    string tempData = (string)TempData["tempdata"];
+
+    //checking for null value in tempdata
+    // if (TempData["tempdata"] != null)
+    // {
+    //     tempData = (string)TempData["tempdata"];
+    // }
+   
+
 }
 
 <h1>Index - This is My HomePage @name</h1>
@@ -23,6 +32,15 @@
 
     @* accessing data coming from the controller action *@
 
+    @{
+        if (tempData != null)
+    {
+        <p>This is @tempData</p>
+    }
+    }
+
+@TempData["tempdata"]
+<br />
 @ViewData["name"]
 <br />
 @ViewData["dept"]

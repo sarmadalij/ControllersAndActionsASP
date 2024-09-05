@@ -31,6 +31,17 @@ namespace ControllersAndActionsASP.Controllers
 
         public IActionResult Contact()
         {
+            //preparing data in TempData to pass to View
+            //and differences ViewData, ViewBag, TempData
+            //we can access tempdata in other views as well
+            //type cast is compulsory for TempData
+            ViewData["vdata"] = "View Data";
+            ViewBag.vbag = "View Bag";
+
+            //we can use TempData.keep() to keep the data across Actions/Views
+            //but the best practice is to use the sessions
+            TempData["tempdata"] = "Temp Data";
+
             return View(); // ViewResult, PArtialViewResult, JsonResult, etc has implemented the IActionResult
         }
 
