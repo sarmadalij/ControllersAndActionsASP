@@ -10,31 +10,42 @@ namespace ControllersAndActionsASP.Controllers
             return View(); // ViewResult, PArtialViewResult, JsonResult, etc has implemented the IActionResult
         }
 
-        public string Display()
+        public IActionResult About()
         {
-            return "Welcome to ASP.NET World!";
+            return View(); // ViewResult, PArtialViewResult, JsonResult, etc has implemented the IActionResult
         }
 
-        public int DisplayId(int id)
+        public IActionResult Contact()
         {
-            return id;
+            return View(); // ViewResult, PArtialViewResult, JsonResult, etc has implemented the IActionResult
         }
 
-        public IActionResult ContentResult() 
-        {
-            return Content("This is Content Result"); //for plain text result
-        }
 
-        public IActionResult EmptyResult()
-        {
-            return new EmptyResult(); //for doing nothing
-        }
+        //public string Display()
+        //{
+        //    return "Welcome to ASP.NET World!";
+        //}
 
-        public IActionResult JsonResult()
-        {
-            var name = "Sarmad";
-            var department = "Computer Science";
-            return Json(new {name,department}); //for JSON result
-        }
+        //public int DisplayId(int id)
+        //{
+        //    return id;
+        //}
+
+        //public IActionResult ContentResult() 
+        //{
+        //    return Content("This is Content Result"); //for plain text result
+        //}
+
+        //public IActionResult EmptyResult()
+        //{
+        //    return new EmptyResult(); //for doing nothing
+        //}
+
+        //public IActionResult JsonResult()
+        //{
+        //    var name = "Sarmad";
+        //    var department = "Computer Science";
+        //    return Json(new {name,department}); //for JSON result
+        //}
     }
 }

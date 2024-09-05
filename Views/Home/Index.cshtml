@@ -1,12 +1,14 @@
 ﻿
 @{
     ViewData["Title"] = "Index";
-    var dateAndTIme = DateTime.Now; 
-    var year = DateTime.Now.Year; 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    // var dateAndTIme = DateTime.Now; 
+    // var year = DateTime.Now.Year; 
 }
 
-<h1>Index</h1>
-<h2>Current Date And Time is @dateAndTIme</h2>
+<h1>Index - This is My HomePage</h1>
+
+@* <h2>Current Date And Time is @dateAndTIme</h2>
 <h2>Current Year is @year</h2>
 
 @{
@@ -31,5 +33,5 @@
     {
         <h3>Student Name: @item</h3>
     }
-}
+} *@
 
