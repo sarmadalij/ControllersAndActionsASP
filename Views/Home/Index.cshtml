@@ -1,7 +1,15 @@
 ﻿
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    // Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // if we want to use other layout in different view, we can simply assign like this,
+    // because the program give priority to this then it goes to Layout in the _ViewStart 
+    // Layout = "~/Views/Shared/_Layout2.cshtml";
+
+    //if we dont want to use any layout in View then view can assign null to the Layout
+    Layout = null;
+
     // var dateAndTIme = DateTime.Now; 
     // var year = DateTime.Now.Year; 
 }
