@@ -12,9 +12,30 @@
 
     // var dateAndTIme = DateTime.Now; 
     // var year = DateTime.Now.Year; 
+
 }
 
 <h1>Index - This is My HomePage</h1>
+
+
+    @* accessing data coming from the controller action *@
+
+@ViewData["name"]
+<br />
+@ViewData["dept"]
+<br />
+@ViewData["sem"]
+<br />
+@ViewData["date"]
+<br />
+
+@{
+    foreach (var item in (string[]) ViewData["array"])
+    {
+        <p>Name: @item</p>
+    }
+}
+
 
 @* <h2>Current Date And Time is @dateAndTIme</h2>
 <h2>Current Year is @year</h2>

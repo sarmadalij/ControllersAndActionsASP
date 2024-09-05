@@ -7,6 +7,15 @@ namespace ControllersAndActionsASP.Controllers
     {
         public IActionResult Index()
         {
+            //preparing data to pass to View
+            ViewData["name"] = "Sarmad";
+            ViewData["dept"] = "Computer Science";
+            ViewData["sem"] = "Seven";
+            ViewData["date"] = DateTime.Now;
+
+            string[] arr = { "Sarmad","Ali","Jalbani" };
+            ViewData["array"] = arr;
+
             return View(); // ViewResult, PArtialViewResult, JsonResult, etc has implemented the IActionResult
         }
 
