@@ -1,4 +1,5 @@
 ﻿using ControllersAndActionsASP.Models;
+using ControllersAndActionsASP.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ControllersAndActionsASP.Controllers
@@ -6,6 +7,16 @@ namespace ControllersAndActionsASP.Controllers
     // : means extends
     public class HomeController : Controller
     {
+        //for data repository
+        private readonly PersonRepository _personRepository = null;
+
+        //constructor of the class controller
+        public HomeController()
+        {
+            _personRepository = new PersonRepository();
+        }
+
+
         public IActionResult Index()
         {
             //model data
@@ -57,7 +68,18 @@ namespace ControllersAndActionsASP.Controllers
             return View(); // ViewResult, PArtialViewResult, JsonResult, etc has implemented the IActionResult
         }
 
+    
+        //for repo data working
+        public List<PersonModel> getAllPersons()
+        {
+            return _personRepository.getAllPersons();
+        }
 
+        // for this in routing id should be changed to age, otherwise it wont work
+        public PersonModel getPerson(int age)
+        {
+            return _personRepository.getPersonByAge(age);
+        }
         //public string Display()
         //{
         //    return "Welcome to ASP.NET World!";
