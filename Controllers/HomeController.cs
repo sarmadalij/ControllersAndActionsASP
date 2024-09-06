@@ -20,7 +20,7 @@ namespace ControllersAndActionsASP.Controllers
         public IActionResult Index()
         {
             //model data
-            var persons = new List<PersonModel> { 
+            var persons = new List<PersonModel> {
                 new PersonModel { personName = "Sarmad", personAge = 24, personProfession = "Programmer"},
                 new PersonModel { personName = "Jalbani", personAge = 16, personProfession = "Student" },
                 new PersonModel { personName = "Ali", personAge = 5, personProfession = "Child"}
@@ -36,7 +36,7 @@ namespace ControllersAndActionsASP.Controllers
             ViewData["sem"] = "Seven";
             ViewData["date"] = DateTime.Now;
 
-            string[] arr = { "Sarmad","Ali","Jalbani" };
+            string[] arr = { "Sarmad", "Ali", "Jalbani" };
             ViewData["array"] = arr;
 
             return View(); // ViewResult, PArtialViewResult, JsonResult, etc has implemented the IActionResult
@@ -48,7 +48,7 @@ namespace ControllersAndActionsASP.Controllers
             ViewBag.name = "Sarmad";
             ViewBag.dept = "Computer Science";
             ViewBag.age = 24;
-            ViewBag.nameList = new List<string> { "Sarmad", "Ali", "Jalbani"};
+            ViewBag.nameList = new List<string> { "Sarmad", "Ali", "Jalbani" };
             return View(); // ViewResult, PArtialViewResult, JsonResult, etc has implemented the IActionResult
         }
 
@@ -68,7 +68,7 @@ namespace ControllersAndActionsASP.Controllers
             return View(); // ViewResult, PArtialViewResult, JsonResult, etc has implemented the IActionResult
         }
 
-    
+
         //for repo data working
         public List<PersonModel> getAllPersons()
         {
@@ -80,6 +80,27 @@ namespace ControllersAndActionsASP.Controllers
         {
             return _personRepository.getPersonByAge(age);
         }
+
+        //Strongly Typed View Concept
+
+        public IActionResult StronglyTypedView()
+        {
+            //model data
+            //PersonModel person = new PersonModel { 
+            //    personName = "Sarmad",
+            //    personAge = 24,
+            //    personProfession = "Programmer" };
+
+            var persons = new List<PersonModel> {
+                new PersonModel { personName = "Sarmad", personAge = 24, personProfession = "Programmer"},
+                new PersonModel { personName = "Jalbani", personAge = 16, personProfession = "Student" },
+                new PersonModel { personName = "Ali", personAge = 5, personProfession = "Child"}
+            };
+
+            return View(persons);
+        }
+
+
         //public string Display()
         //{
         //    return "Welcome to ASP.NET World!";
@@ -106,5 +127,6 @@ namespace ControllersAndActionsASP.Controllers
         //    var department = "Computer Science";
         //    return Json(new {name,department}); //for JSON result
         //}
+
     }
 }

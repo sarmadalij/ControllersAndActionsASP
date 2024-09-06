@@ -1,0 +1,22 @@
+﻿@using ControllersAndActionsASP.Models
+
+@model IEnumerable<PersonModel>
+@{
+    ViewData["Title"] = "StronglyTypedView";
+}
+
+<h1>StronglyTypedView</h1>
+
+@* <h2>@Model.personName</h2>
+<h2>@Model.personAge</h2>
+<h2>@Model.personProfession</h2> *@
+
+@{
+    foreach (var item in Model)
+    {
+     <h3>@item.personName</h3>   
+     <h3>@item.personAge</h3>   
+     <h3>@item.personProfession</h3>   
+    }
+}
+
